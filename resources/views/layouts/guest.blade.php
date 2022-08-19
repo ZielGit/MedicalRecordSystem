@@ -10,10 +10,10 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
 
-        <link rel="stylesheet" href="{{ asset('windmill/css/tailwind.output.css') }}" />
-
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <!-- Windmill -->
+        <link rel="stylesheet" href="{{ asset('windmill/css/tailwind.output.css') }}" />
     </head>
     <body>
         <div class="font-sans text-gray-900 antialiased">
