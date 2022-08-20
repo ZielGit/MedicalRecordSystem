@@ -9,7 +9,9 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
-        
+        <!-- Font Awesome 6 -->
+        <script src="https://kit.fontawesome.com/70ed03d184.js" crossorigin="anonymous"></script>
+
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <!-- Windmill -->
@@ -20,7 +22,8 @@
         
         @stack('styles')
 
-        {{-- <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script> --}}
+        <!-- Windmill Scripts -->
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
         <script src="{{ asset('windmill/js/init-alpine.js') }}"></script>
     </head>
     <body>
