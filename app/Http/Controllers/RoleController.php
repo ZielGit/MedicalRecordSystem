@@ -26,7 +26,7 @@ class RoleController extends Controller
     {
         $role = Role::create($request->all());
         $role->permissions()->sync($request->get('permissions'));
-        return redirect()->route('admin.roles.index');
+        return redirect()->route('admin.roles.index')->with('store', 'ok');
     }
 
     public function show(Role $role)
@@ -44,7 +44,7 @@ class RoleController extends Controller
     {
         $role->update($request->all());
         $role->permissions()->sync($request->permissions);
-        return redirect()->route('admin.roles.index');
+        return redirect()->route('admin.roles.index')->with('update', 'ok');
     }
 
     public function destroy(Role $role)

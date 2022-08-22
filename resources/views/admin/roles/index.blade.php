@@ -29,8 +29,8 @@
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-                        <tr class="text-gray-700 dark:text-gray-400">
-                            @foreach ($roles as $role)
+                        @foreach ($roles as $role)
+                            <tr class="text-gray-700 dark:text-gray-400">
                                 <td class="px-4 py-3">{{ $role->id }}</td>
                                 <td class="px-4 py-3">{{ $role->name }}</td>
                                 <td class="px-4 py-3">
@@ -47,8 +47,8 @@
                                         {{ __('Details') }}
                                     </a>
                                 </td>
-                            @endforeach
-                        </tr>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -56,3 +56,36 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+    <script src="{{ asset('plugins/sweetalert2/sweetalert2.all.min.js') }}"></script>
+    <script>
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        })
+    </script>
+    @if (session('store') == 'ok')
+        <script>
+            Toast.fire({
+                icon: 'success',
+                title: "El rol ha sido creado correctamente"
+            })
+        </script>
+    @endif
+    @if (session('update') == 'ok')
+        <script>
+            Toast.fire({
+                icon: 'success',
+                title: "El rol ha sido actualizado correctamente"
+            })
+        </script>
+    @endif
+@endpush
