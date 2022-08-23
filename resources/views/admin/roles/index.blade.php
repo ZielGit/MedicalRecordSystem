@@ -13,7 +13,6 @@
             {{ __('Create New Role') }}
         </a>
     </div>
-    
 
     <div class="p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
         <div class="w-full overflow-hidden rounded-lg shadow-xs">
@@ -76,7 +75,7 @@
         <script>
             Toast.fire({
                 icon: 'success',
-                title: "El rol ha sido creado correctamente"
+                title: "{{ __('Role has been created successfully') }}"
             })
         </script>
     @endif
@@ -84,7 +83,7 @@
         <script>
             Toast.fire({
                 icon: 'success',
-                title: "El rol ha sido actualizado correctamente"
+                title: "{{ __('Role has been updated successfully') }}"
             })
         </script>
     @endif
