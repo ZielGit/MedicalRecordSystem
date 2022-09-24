@@ -2,7 +2,7 @@
     <div class="h-32 md:h-auto md:w-1/2">
         <img
             aria-hidden="true"
-            class="object-cover w-full h-full dark:hidden"
+            class="block object-cover w-full h-full dark:hidden"
             src="{{ asset('windmill/img/login-office.jpeg') }}"
             alt="Office"
         />
