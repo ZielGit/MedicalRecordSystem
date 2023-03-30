@@ -51,6 +51,20 @@
                     <span class="block sm:inline">{{ $message }}</span>
                 </div>
             @enderror
+            <label class="block mb-4">
+                <span class="text-gray-700 dark:text-gray-400">{{ __('Day of birth') }}</span>
+                <input
+                    type="date"
+                    class="block w-full mt-1 text-sm text-gray-700 dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
+                    name="day_of_birth"
+                    value="{{ old('day_of_birth') }}"
+                />
+            </label>
+            @error('day_of_birth')
+                <div class="bg-red-100 border border-red-400 text-red-700 px-3 py-2 rounded relative mt-2" role="alert">
+                    <span class="block sm:inline">{{ $message }}</span>
+                </div>
+            @enderror
             <div class="mb-6">
                 <span class="text-gray-700 dark:text-gray-400">
                     {{ __('Roles') }}
