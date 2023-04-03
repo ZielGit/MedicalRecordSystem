@@ -24,6 +24,7 @@
                         >
                             <th class="px-4 py-3">{{ __('ID') }}</th>
                             <th class="px-4 py-3">{{ __('Name') }}</th>
+                            <th class="px-4 py-3">{{ __('Age') }}</th>
                             <th class="px-4 py-3">{{ __('Email') }}</th>
                             <th class="px-4 py-3">{{ __('Actions') }}</th>
                         </tr>
@@ -33,6 +34,7 @@
                             <tr class="text-gray-700 dark:text-gray-400">
                                 <td class="px-4 py-3">{{ $user->id }}</td>
                                 <td class="px-4 py-3">{{ $user->name }}</td>
+                                <td class="px-4 py-3">{{ \Carbon\Carbon::parse($user->birthdate)->age }}</td>
                                 <td class="px-4 py-3">{{ $user->email }}</td>
                                 <td class="px-4 py-3">
                                     <a
