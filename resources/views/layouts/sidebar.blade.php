@@ -5,18 +5,24 @@
             {{ __('Windmill') }}
         </a>
         <ul class="mt-6">
-            <x-jet-nav-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('admin.dashboard')">
-                <i class="fa-solid fa-house w-5 h-5"></i>
-                <span class="ml-4">{{ __('Dashboard') }}</span>
-            </x-jet-nav-link>
-            <x-jet-nav-link href="{{ route('admin.users.index') }}" :active="request()->routeIs('admin.users.*')">
-                <i class="fa-solid fa-user-group w-5 h-5"></i>
-                <span class="ml-4">{{ __('Users') }}</span>
-            </x-jet-nav-link>
-            <x-jet-nav-link href="{{ route('admin.roles.index') }}" :active="request()->routeIs('admin.roles.*')">
-                <i class="fa-solid fa-user-tie w-5 h-5"></i>
-                <span class="ml-4">{{ __('Roles') }}</span>
-            </x-jet-nav-link>
+            @can('dashboard')
+                <x-jet-nav-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('admin.dashboard')">
+                    <i class="fa-solid fa-house w-5 h-5"></i>
+                    <span class="ml-4">{{ __('Dashboard') }}</span>
+                </x-jet-nav-link>
+            @endcan
+            @can('users.index')
+                <x-jet-nav-link href="{{ route('admin.users.index') }}" :active="request()->routeIs('admin.users.*')">
+                    <i class="fa-solid fa-user-group w-5 h-5"></i>
+                    <span class="ml-4">{{ __('Users') }}</span>
+                </x-jet-nav-link>
+            @endcan
+            @can('roles.index')
+                <x-jet-nav-link href="{{ route('admin.roles.index') }}" :active="request()->routeIs('admin.roles.*')">
+                    <i class="fa-solid fa-user-tie w-5 h-5"></i>
+                    <span class="ml-4">{{ __('Roles') }}</span>
+                </x-jet-nav-link>
+            @endcan
         </ul>
     </div>
 </aside>
@@ -49,18 +55,24 @@
             {{ __('Windmill') }}
         </a>
         <ul class="mt-6">
-            <x-jet-responsive-nav-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('admin.dashboard')">
-                <i class="fa-solid fa-house w-5 h-5"></i>
-                <span class="ml-4">{{ __('Dashboard') }}</span>
-            </x-jet-responsive-nav-link>
-            <x-jet-responsive-nav-link href="{{ route('admin.users.index') }}" :active="request()->routeIs('admin.users.*')">
-                <i class="fa-solid fa-user-group w-5 h-5"></i>
-                <span class="ml-4">{{ __('Users') }}</span>
-            </x-jet-responsive-nav-link>
-            <x-jet-responsive-nav-link href="{{ route('admin.roles.index') }}" :active="request()->routeIs('admin.roles.*')">
-                <i class="fa-solid fa-user-tie w-5 h-5"></i>
-                <span class="ml-4">{{ __('Roles') }}</span>
-            </x-jet-responsive-nav-link>
+            @can('dashboard')
+                <x-jet-responsive-nav-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('admin.dashboard')">
+                    <i class="fa-solid fa-house w-5 h-5"></i>
+                    <span class="ml-4">{{ __('Dashboard') }}</span>
+                </x-jet-responsive-nav-link>
+            @endcan
+            @can('users.index')
+                <x-jet-responsive-nav-link href="{{ route('admin.users.index') }}" :active="request()->routeIs('admin.users.*')">
+                    <i class="fa-solid fa-user-group w-5 h-5"></i>
+                    <span class="ml-4">{{ __('Users') }}</span>
+                </x-jet-responsive-nav-link>
+            @endcan
+            @can('roles.index')
+                <x-jet-responsive-nav-link href="{{ route('admin.roles.index') }}" :active="request()->routeIs('admin.roles.*')">
+                    <i class="fa-solid fa-user-tie w-5 h-5"></i>
+                    <span class="ml-4">{{ __('Roles') }}</span>
+                </x-jet-responsive-nav-link>
+            @endcan
         </ul>
     </div>
 </aside>

@@ -6,12 +6,14 @@
         <h2 class="text-2xl font-semibold text-gray-700 dark:text-gray-200">
             {{ __('Roles List') }}
         </h2>
-        <a
-            href="{{ route('admin.roles.create') }}" 
-            class="p-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
-        >
-            {{ __('Create New Role') }}
-        </a>
+        @can('users.create')
+            <a
+                href="{{ route('admin.roles.create') }}" 
+                class="p-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+            >
+                {{ __('Create New Role') }}
+            </a>
+        @endcan
     </div>
 
     <div class="p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
@@ -33,18 +35,22 @@
                                 <td class="px-4 py-3">{{ $role->id }}</td>
                                 <td class="px-4 py-3">{{ $role->name }}</td>
                                 <td class="px-4 py-3">
-                                    <a
-                                        href="{{ route('admin.roles.edit', $role->id) }}" 
-                                        class="px-4 py-2 mr-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-yellow-400 border border-transparent rounded-lg active:bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:shadow-outline-yellow"
-                                    >
-                                        {{ __('Edit') }}
-                                    </a>
-                                    <a
-                                        href="{{ route('admin.roles.show', $role->id) }}" 
-                                        class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-sky-400 border border-transparent rounded-lg active:bg-sky-400 hover:bg-sky-500 focus:outline-none focus:shadow-outline-sky"
-                                    >
-                                        {{ __('Details') }}
-                                    </a>
+                                    @can('users.edit')
+                                        <a
+                                            href="{{ route('admin.roles.edit', $role->id) }}" 
+                                            class="px-4 py-2 mr-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-yellow-400 border border-transparent rounded-lg active:bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:shadow-outline-yellow"
+                                        >
+                                            {{ __('Edit') }}
+                                        </a>
+                                    @endcan
+                                    @can('users.show')
+                                        <a
+                                            href="{{ route('admin.roles.show', $role->id) }}" 
+                                            class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-sky-400 border border-transparent rounded-lg active:bg-sky-400 hover:bg-sky-500 focus:outline-none focus:shadow-outline-sky"
+                                        >
+                                            {{ __('Details') }}
+                                        </a>
+                                    @endcan
                                 </td>
                             </tr>
                         @endforeach

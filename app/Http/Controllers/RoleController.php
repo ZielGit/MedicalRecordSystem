@@ -10,6 +10,15 @@ use Spatie\Permission\Models\Role;
 
 class RoleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:roles.index')->only('index');
+        $this->middleware('can:roles.create')->only('create', 'store');
+        $this->middleware('can:roles.edit')->only('edit', 'update');
+        $this->middleware('can:roles.show')->only('show');
+        // $this->middleware('can:roles.destroy')->only('destroy');
+    }
+
     public function index()
     {
         $roles = Role::all();
@@ -47,9 +56,10 @@ class RoleController extends Controller
         return redirect()->route('admin.roles.index')->with('update', 'ok');
     }
 
-    public function destroy(Role $role)
-    {
-        $role->delete();
-        return back();
-    }
+    // Aqui se podria aplicar soft delete
+    // public function destroy(Role $role)
+    // {
+    //     $role->delete();
+    //     return back();
+    // }
 }
