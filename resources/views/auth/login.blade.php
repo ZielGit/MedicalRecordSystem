@@ -18,16 +18,16 @@
                     @csrf
         
                     <div>
-                        <x-jet-label class="text-gray-700 dark:text-gray-400" for="email" value="{{ __('Email') }}" />
-                        <x-jet-input id="email" class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" type="email" name="email" :value="old('email')" placeholder="user@gmail.com" required autofocus />
+                        <x-jet-label for="email" value="{{ __('Email') }}" />
+                        <x-jet-input id="email" class="block w-full mt-1 text-sm form-input" type="email" name="email" :value="old('email')" placeholder="user@gmail.com" required autofocus />
                     </div>
         
                     <div class="mt-4">
-                        <x-jet-label class="text-gray-700 dark:text-gray-400" for="password" value="{{ __('Password') }}" />
-                        <x-jet-input id="password" class="block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input" type="password" name="password" placeholder="***************" required autocomplete="current-password" />
+                        <x-jet-label for="password" value="{{ __('Password') }}" />
+                        <x-jet-input id="password" class="block w-full mt-1 text-sm form-input" type="password" name="password" placeholder="***************" required autocomplete="current-password" />
                     </div>
                     
-                    <x-jet-button class="flex items-center justify-center w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple">
+                    <x-jet-button class="flex items-center justify-center w-full px-4 py-2 mt-4 text-sm font-medium leading-5 transition-colors duration-150 border border-transparent rounded-lg">
                         {{ __('Log in') }}
                     </x-jet-button>
 
