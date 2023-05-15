@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,7 +23,8 @@ Route::get('/', function () {
 });
 
 Route::prefix('user')->name('user.')->group(function () {
-    Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+    Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+    Route::get('appointment/create', [AppointmentController::class, 'create'])->name('appointment.create');
 });
 
 Route::middleware([
@@ -30,7 +32,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->prefix('admin')->name('admin.')->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('users', AdminUserController::class)->names('users');
     Route::resource('roles', RoleController::class)->names('roles');
 });

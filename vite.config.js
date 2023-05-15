@@ -5,6 +5,7 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
+                '../public/flowbite-admin-dashboard/css/app.css',
                 'resources/css/app.css',
                 'resources/js/app.js',
             ],
