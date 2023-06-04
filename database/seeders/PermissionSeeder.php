@@ -14,16 +14,16 @@ class PermissionSeeder extends Seeder
      */
     public function run()
     {
-        Permission::create(['name' => 'dashboard', 'description' => 'Ver panel'])->syncRoles(['Administrador', 'Secretario', 'Doctor', 'Paciente']);
+        Permission::create(['name' => 'dashboard', 'description' => 'Ver panel'])->syncRoles(['Administrador', 'Secretario', 'Médico', 'Paciente']);
 
-        Permission::create(['name' => 'users.index', 'description' => 'Ver lista de usuarios'])->syncRoles(['Administrador', 'Secretario', 'Doctor']);
+        Permission::create(['name' => 'users.index', 'description' => 'Ver lista de usuarios'])->syncRoles(['Administrador', 'Secretario', 'Médico']);
         Permission::create(['name' => 'users.create', 'description' => 'Crear usuario'])->syncRoles('Administrador');
         Permission::create(['name' => 'users.edit', 'description' => 'Editar usuario'])->syncRoles('Administrador');
-        Permission::create(['name' => 'users.show', 'description' => 'Ver detalles del usuario'])->syncRoles(['Administrador', 'Doctor']);
+        Permission::create(['name' => 'users.show', 'description' => 'Ver detalles del usuario'])->syncRoles(['Administrador', 'Médico']);
 
-        Permission::create(['name' => 'roles.index', 'description' => 'Ver lista de roles'])->syncRoles('Administrador', 'Doctor');
+        Permission::create(['name' => 'roles.index', 'description' => 'Ver lista de roles'])->syncRoles('Administrador', 'Médico');
         Permission::create(['name' => 'roles.create', 'description' => 'Crear rol'])->syncRoles('Administrador');
         Permission::create(['name' => 'roles.edit', 'description' => 'Editar rol'])->syncRoles('Administrador');
-        Permission::create(['name' => 'roles.show', 'description' => 'Ver detalles del rol'])->syncRoles('Administrador', 'Doctor');
+        Permission::create(['name' => 'roles.show', 'description' => 'Ver detalles del rol'])->syncRoles('Administrador', 'Médico');
     }
 }

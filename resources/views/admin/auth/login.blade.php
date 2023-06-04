@@ -3,7 +3,7 @@
         <div class="flex-1 h-full max-w-4xl mx-auto overflow-hidden bg-white rounded-lg shadow-xl dark:bg-gray-800">
             <x-jet-authentication-card>
                 <h1 class="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">
-                    {{ __('Login Users') }}
+                    {{ __('Login Admin') }}
                 </h1>
 
                 <x-jet-validation-errors class="mb-4" />
@@ -14,7 +14,7 @@
                     </div>
                 @endif
         
-                <form method="POST" action="{{ route('login') }}">
+                <form method="POST" action="{{ url($guard.'/login') }}">
                     @csrf
         
                     <div>
