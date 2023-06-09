@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('can:dashboard')->only('index');
-    // }
+    public function __construct()
+    {
+        $this->middleware('can:admin.dashboard')->only('index');
+    }
 
     public function index()
     {

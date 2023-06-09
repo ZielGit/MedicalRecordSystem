@@ -5,24 +5,24 @@
             {{ __('Windmill') }}
         </a>
         <ul class="mt-6">
-            {{-- @can('dashboard') --}}
+            @can('admin.dashboard')
                 <x-admin.nav-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('admin.dashboard')">
                     <i class="fa-solid fa-house w-5 h-5"></i>
                     <span class="ml-4">{{ __('Dashboard') }}</span>
                 </x-admin.nav-link>
-            {{-- @endcan --}}
-            {{-- @can('users.index') --}}
+            @endcan
+            @can('admin.users.index')
                 <x-admin.nav-link href="{{ route('admin.users.index') }}" :active="request()->routeIs('admin.users.*')">
                     <i class="fa-solid fa-user-group w-5 h-5"></i>
                     <span class="ml-4">{{ __('Users') }}</span>
                 </x-admin.nav-link>
-            {{-- @endcan --}}
-            {{-- @can('roles.index') --}}
+            @endcan
+            @can('admin.roles.index')
                 <x-admin.nav-link href="{{ route('admin.roles.index') }}" :active="request()->routeIs('admin.roles.*')">
                     <i class="fa-solid fa-user-tie w-5 h-5"></i>
                     <span class="ml-4">{{ __('Roles') }}</span>
                 </x-admin.nav-link>
-            {{-- @endcan --}}
+            @endcan
         </ul>
     </div>
 </aside>
@@ -55,24 +55,24 @@
             {{ __('Windmill') }}
         </a>
         <ul class="mt-6">
-            {{-- @can('dashboard') --}}
+            @can('admin.dashboard')
                 <x-admin.responsive-nav-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('admin.dashboard')">
                     <i class="fa-solid fa-house w-5 h-5"></i>
                     <span class="ml-4">{{ __('Dashboard') }}</span>
                 </x-admin.responsive-nav-link>
-            {{-- @endcan --}}
-            {{-- @can('users.index') --}}
+            @endcan
+            @can('admin.users.index')
                 <x-admin.responsive-nav-link href="{{ route('admin.users.index') }}" :active="request()->routeIs('admin.users.*')">
                     <i class="fa-solid fa-user-group w-5 h-5"></i>
                     <span class="ml-4">{{ __('Users') }}</span>
                 </x-admin.responsive-nav-link>
-            {{-- @endcan --}}
-            {{-- @can('roles.index') --}}
+            @endcan
+            @can('admin.roles.index')
                 <x-admin.responsive-nav-link href="{{ route('admin.roles.index') }}" :active="request()->routeIs('admin.roles.*')">
                     <i class="fa-solid fa-user-tie w-5 h-5"></i>
                     <span class="ml-4">{{ __('Roles') }}</span>
                 </x-admin.responsive-nav-link>
-            {{-- @endcan --}}
+            @endcan
         </ul>
     </div>
 </aside>

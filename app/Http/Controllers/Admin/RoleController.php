@@ -11,14 +11,14 @@ use Spatie\Permission\Models\Role;
 
 class RoleController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('can:roles.index')->only('index');
-    //     $this->middleware('can:roles.create')->only('create', 'store');
-    //     $this->middleware('can:roles.edit')->only('edit', 'update');
-    //     $this->middleware('can:roles.show')->only('show');
-    //     // $this->middleware('can:roles.destroy')->only('destroy');
-    // }
+    public function __construct()
+    {
+        $this->middleware('can:admin.roles.index')->only('index');
+        $this->middleware('can:admin.roles.create')->only('create', 'store');
+        $this->middleware('can:admin.roles.edit')->only('edit', 'update');
+        $this->middleware('can:admin.roles.show')->only('show');
+        // $this->middleware('can:admin.roles.destroy')->only('destroy');
+    }
 
     public function index()
     {

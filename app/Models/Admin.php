@@ -14,7 +14,7 @@ use Laravel\Sanctum\HasApiTokens;
  * laravel-permission: generando relaciones
  * Los modelos se encuentran en vendor/spatie/laravel-permission/src/Models
  */ 
-// use Spatie\Permission\Traits\HasRoles;
+use Spatie\Permission\Traits\HasRoles;
 
 class Admin extends Authenticatable
 {
@@ -25,7 +25,14 @@ class Admin extends Authenticatable
     use TwoFactorAuthenticatable;
     
     // laravel-permission: generando relaciones
-    // use HasRoles;
+    use HasRoles;
+
+    // guard de auth
+    // Pero funciona igual, no hay validación comento por el momento *hasta aprender a usarlo o para que sirve*
+    // protected $guard = "admin";
+    
+    // guard_name de permission
+    public $guard_name = 'admin';
 
     /**
      * The attributes that are mass assignable.

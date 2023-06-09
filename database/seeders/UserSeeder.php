@@ -19,6 +19,6 @@ class UserSeeder extends Seeder
             'email' => 'frans@gmail.com',
             'password' => bcrypt('SistemaClinica'),
             'birthdate' => '1994-05-09'
-        ])->assignRole('Administrador');
+        ])->assignRole('Médico');
     }
 }
