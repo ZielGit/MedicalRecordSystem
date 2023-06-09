@@ -1,21 +1,8 @@
-<div class="flex flex-col overflow-y-auto md:flex-row">
-    <div class="h-32 md:h-auto md:w-1/2">
-        <img
-            aria-hidden="true"
-            class="block object-cover w-full h-full dark:hidden"
-            src="{{ asset('windmill/img/login-office.jpeg') }}"
-            alt="Office"
-        />
-        <img
-            aria-hidden="true"
-            class="hidden object-cover w-full h-full dark:block"
-            src="{{ asset('windmill/img/login-office-dark.jpeg') }}"
-            alt="Office"
-        />
-    </div>
-    <div class="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
-        <div class="w-full">
-            {{ $slot }}
-        </div>
+<div class="flex flex-col items-center justify-center px-6 pt-8 mx-auto md:h-screen pt:mt-0 dark:bg-gray-900">
+    {{ $logo }}
+
+    <!-- Card -->
+    <div class="w-full max-w-xl p-6 space-y-8 sm:p-8 bg-white rounded-lg shadow dark:bg-gray-800">
+        {{ $slot }}
     </div>
 </div>

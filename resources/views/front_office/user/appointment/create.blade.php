@@ -56,7 +56,9 @@
                                 {{-- <a href="#" class="inline-flex items-center justify-center w-1/2 px-3 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-primary-300 sm:w-auto dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700">
                                     {{ __('Cancel') }}
                                 </a> --}}
-                                <button class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800" type="submit">{{ __('Register') }}</button>
+                                <x-front.button class="text-sm py-2.5">
+                                    {{ __('Register') }}
+                                </x-front.button>
                             </div>
                         </div>
                     </div>
