@@ -9,11 +9,11 @@ class DashboardController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('can:dashboard')->only('index');
+        $this->middleware('can:admin.dashboard')->only('index');
     }
 
     public function index()
     {
-        return view('dashboard');
+        return view('admin.dashboard');
     }
 }

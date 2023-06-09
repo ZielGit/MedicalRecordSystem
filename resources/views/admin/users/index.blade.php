@@ -6,7 +6,7 @@
         <h2 class="text-2xl font-semibold text-gray-700 dark:text-gray-200">
             {{ __('Users List') }}
         </h2>
-        @can('roles.create')
+        @can('admin.users.create')
             <a
                 href="{{ route('admin.users.create') }}" 
                 class="p-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-lg active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
@@ -39,7 +39,7 @@
                                 <td class="px-4 py-3">{{ \Carbon\Carbon::parse($user->birthdate)->age }}</td>
                                 <td class="px-4 py-3">{{ $user->email }}</td>
                                 <td class="px-4 py-3">
-                                    @can('roles.edit')
+                                    @can('admin.users.edit')
                                         <a
                                             href="{{ route('admin.users.edit', $user->id) }}" 
                                             class="px-4 py-2 mr-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-yellow-400 border border-transparent rounded-lg active:bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:shadow-outline-yellow"
@@ -47,7 +47,7 @@
                                             {{ __('Edit') }}
                                         </a>
                                     @endcan
-                                    @can('roles.show')
+                                    @can('admin.users.show')
                                         <a
                                             href="{{ route('admin.users.show', $user->id) }}" 
                                             class="px-4 py-2 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-sky-400 border border-transparent rounded-lg active:bg-sky-400 hover:bg-sky-500 focus:outline-none focus:shadow-outline-sky"

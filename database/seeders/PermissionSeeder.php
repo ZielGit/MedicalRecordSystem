@@ -14,16 +14,16 @@ class PermissionSeeder extends Seeder
      */
     public function run()
     {
-        Permission::create(['name' => 'dashboard', 'description' => 'Ver panel'])->syncRoles(['Administrador', 'Secretario', 'Doctor', 'Paciente']);
+        Permission::create(['name' => 'admin.dashboard', 'description' => 'Ver panel', 'guard_name' => 'admin'])->syncRoles('Administrador');
 
-        Permission::create(['name' => 'users.index', 'description' => 'Ver lista de usuarios'])->syncRoles(['Administrador', 'Secretario', 'Doctor']);
-        Permission::create(['name' => 'users.create', 'description' => 'Crear usuario'])->syncRoles('Administrador');
-        Permission::create(['name' => 'users.edit', 'description' => 'Editar usuario'])->syncRoles('Administrador');
-        Permission::create(['name' => 'users.show', 'description' => 'Ver detalles del usuario'])->syncRoles(['Administrador', 'Doctor']);
+        Permission::create(['name' => 'admin.users.index', 'description' => 'Ver lista de usuarios', 'guard_name' => 'admin'])->syncRoles('Administrador');
+        Permission::create(['name' => 'admin.users.create', 'description' => 'Crear usuario', 'guard_name' => 'admin'])->syncRoles('Administrador');
+        Permission::create(['name' => 'admin.users.edit', 'description' => 'Editar usuario', 'guard_name' => 'admin'])->syncRoles('Administrador');
+        Permission::create(['name' => 'admin.users.show', 'description' => 'Ver detalles del usuario', 'guard_name' => 'admin'])->syncRoles('Administrador');
 
-        Permission::create(['name' => 'roles.index', 'description' => 'Ver lista de roles'])->syncRoles('Administrador', 'Doctor');
-        Permission::create(['name' => 'roles.create', 'description' => 'Crear rol'])->syncRoles('Administrador');
-        Permission::create(['name' => 'roles.edit', 'description' => 'Editar rol'])->syncRoles('Administrador');
-        Permission::create(['name' => 'roles.show', 'description' => 'Ver detalles del rol'])->syncRoles('Administrador', 'Doctor');
+        Permission::create(['name' => 'admin.roles.index', 'description' => 'Ver lista de roles', 'guard_name' => 'admin'])->syncRoles('Administrador');
+        Permission::create(['name' => 'admin.roles.create', 'description' => 'Crear rol', 'guard_name' => 'admin'])->syncRoles('Administrador');
+        Permission::create(['name' => 'admin.roles.edit', 'description' => 'Editar rol', 'guard_name' => 'admin'])->syncRoles('Administrador');
+        Permission::create(['name' => 'admin.roles.show', 'description' => 'Ver detalles del rol', 'guard_name' => 'admin'])->syncRoles('Administrador');
     }
 }
