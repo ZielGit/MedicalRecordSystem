@@ -15,4 +15,12 @@ class UserController extends Controller
     {
         return view('front_office.user.dashboard');
     }
+
+    public function show(Request $request)
+    {
+        return view('front_office.user.profile.show', [
+            'request' => $request,
+            'user' => $request->user(),
+        ]);
+    }
 }

@@ -34,7 +34,6 @@ Route::middleware([
     'verified'
 ])->prefix('admin')->name('admin.')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    // User & Profile...
     Route::get('profile', [AdminController::class, 'show'])->name('profile.show');
     Route::resource('users', AdminUserController::class)->names('users');
     Route::resource('roles', RoleController::class)->names('roles');
@@ -46,5 +45,6 @@ Route::middleware([
     'verified'
 ])->prefix('user')->name('user.')->group(function () {
     Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+    Route::get('profile/show', [UserController::class, 'show'])->name('profile.show');
     Route::get('appointment/create', [AppointmentController::class, 'create'])->name('appointment.create');
 });
