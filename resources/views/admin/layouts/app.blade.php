@@ -12,7 +12,7 @@
         <!-- Font Awesome 6 -->
         <script src="https://kit.fontawesome.com/70ed03d184.js" crossorigin="anonymous"></script>
 
-        <!-- Scripts -->
+        <!-- Vite -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <!-- Windmill -->
         <link rel="stylesheet" href="{{ asset('windmill/css/tailwind.output.css') }}" />
@@ -40,6 +40,7 @@
 
         @stack('modals')
 
+        <!-- Scripts -->
         @livewireScripts
 
         @stack('scripts')

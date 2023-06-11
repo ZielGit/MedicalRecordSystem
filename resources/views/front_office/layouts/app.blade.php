@@ -15,11 +15,12 @@
         @vite(['../public/flowbite-admin-dashboard/css/app.css', 'resources/css/app.css', 'resources/js/app.js'])
 
         <!-- Styles -->
+        @livewireStyles
+
         @stack('styles')
         
         <!-- Scripts -->
         <script>
-            // On page load or when changing themes, best to add inline in `head` to avoid FOUC
             if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                 document.documentElement.classList.add('dark');
             } else {
@@ -32,14 +33,18 @@
         @include('front_office.partials.header')
         <!-- End header -->
     
-        @yield('section')
+        {{ $slot }}
 
         <!-- Start footer -->
         @include('front_office.partials.footer')
         <!-- End footer -->
-        
+
+        @stack('modals')
+
         <!-- Scripts -->
         <script src="{{ asset('flowbite-admin-dashboard/js/app.bundle.js') }}"></script>
+
+        @livewireScripts
 
         @stack('scripts')
     </body=>
