@@ -21,9 +21,9 @@
             <x-admin.label for="password" class="mt-4" value="{{ __('Password') }}" />
             <x-admin.input id="password" type="password" name="password" placeholder="***************" required autocomplete="current-password" />
             
-            <x-admin.button-primary class="w-full mt-4">
+            <x-admin.button class="w-full mt-4">
                 {{ __('Log in') }}
-            </x-admin.button-primary>
+            </x-admin.button>
 
             <div class="flex flex-row items-center justify-end mt-4">
                 <div class="basis-1/2 mt-2">
