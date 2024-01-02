@@ -42,7 +42,7 @@
                     </a>
                 @endif
             </div>
-            <x-front.button class="w-full text-base sm:w-auto py-3">
+            <x-front.button class="w-full text-base sm:w-auto">
                 {{ __('Login to your account') }}
             </x-front.button>
             <div class="text-sm font-medium text-gray-500 dark:text-gray-400">
